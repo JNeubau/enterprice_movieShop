@@ -12,7 +12,7 @@ opisany przynajmniej następującymi atrybutami: **id, tytuł, kategoria (dramat
 familijny, itd.), rok produkcji, opis fabuły, cena**
 
 #### **NOT** to do 
-Rragmenty systemu odpowiedzialne za ewidencję klientów,
+Fragmenty systemu odpowiedzialne za ewidencję klientów,
 autoryzację klientów, składanie zamówienia, uaktualnianie katalogu filmów
 
 #### Procenty
@@ -25,5 +25,5 @@ autoryzację klientów, składanie zamówienia, uaktualnianie katalogu filmów
 
 
 ### Done:
-- SQL: CREATE TABLE `enterprice_proj`.`movie` (`ID` INT NOT NULL AUTO_INCREMENT , `Title` VARCHAR(100) NOT NULL , `Genre` VARCHAR(535) NULL , `Year` VARCHAR(5) NOT NULL , `Description` VARCHAR(535) NULL DEFAULT NULL , `Price` DECIMAL NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB; 
+- SQL: CREATE TABLE `enterprice_proj`.`movies` (`ID` INT NOT NULL AUTO_INCREMENT , `Title` VARCHAR(100) NOT NULL , `Genre` VARCHAR(535) NULL , `Year` VARCHAR(5) NOT NULL , `Description` VARCHAR(535) NULL DEFAULT NULL , `Price` DECIMAL NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB; 
 - 
