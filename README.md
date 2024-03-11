@@ -25,5 +25,10 @@ autoryzację klientów, składanie zamówienia, uaktualnianie katalogu filmów
 
 
 ### Done:
+<<<<<<< HEAD
 - SQL: CREATE TABLE `enterprice_proj`.`movies` (`ID` INT NOT NULL AUTO_INCREMENT , `Title` VARCHAR(100) NOT NULL , `Genre` VARCHAR(535) NULL , `Year` VARCHAR(5) NOT NULL , `Description` VARCHAR(535) NULL DEFAULT NULL , `Price` DECIMAL NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB; 
 - 
+=======
+- SQL: CREATE TABLE `enterprice_proj`.`movie` (`ID` INT NOT NULL AUTO_INCREMENT , `Title` VARCHAR(100) NOT NULL , `Genre` VARCHAR(535) NULL , `Year` VARCHAR(5) NOT NULL , `Description` VARCHAR(535) NULL DEFAULT NULL , `Price` DECIMAL NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB; 
+- MySQL port: 8080, Spring port: 8081
+>>>>>>> 3d562e27baa112f3a3a0279df2f98cc2219db152
