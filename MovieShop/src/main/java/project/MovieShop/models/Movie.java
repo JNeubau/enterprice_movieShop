@@ -5,7 +5,9 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Movie {
@@ -29,7 +31,12 @@ public class Movie {
     private Double prize;
 
     @ManyToMany
-    private List<Genre> categories;
+    @JoinTable(
+            name="movies_with_genre",
+            joinColumns = @JoinColumn(name = "genre_id"),
+            inverseJoinColumns = @JoinColumn(name = "movie_id")
+    )
+    private Set<Genre> categories = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -85,6 +92,10 @@ public class Movie {
 
     public void setPrize(Double prize) {
         this.prize = prize;
+    }
+
+    public Set<Genre> getCategories() {
+        return categories;
     }
 
 }

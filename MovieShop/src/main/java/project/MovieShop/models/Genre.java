@@ -2,7 +2,9 @@ package project.MovieShop.models;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Genre {
@@ -12,8 +14,8 @@ public class Genre {
 
     private String name;
 
-    @ManyToMany
-    private List<Movie> moviesList;
+    @ManyToMany(mappedBy = "categories")
+    private Set<Movie> moviesList = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -29,5 +31,9 @@ public class Genre {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Movie> getMoviesList() {
+        return moviesList;
     }
 }
