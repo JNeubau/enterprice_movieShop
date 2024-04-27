@@ -20,16 +20,30 @@
 </nav>
 
 <div class="container-fluid">
-    <h1 style="text-align: center"><span th:text="${name.title}">Stranger</span></h1>
+    <h1 style="text-align: center"><span th:text="${movie.title}">Stranger</span></h1>
 
+    <div class="card text-center border-dark">
+        <h3 class="card-header text-danger">
+            <span th:text="${movie.prize}"></span> PLN
+        </h3>
+        <div class="card-body">
+            <h4 class="card-title">
+                <span th:text="${movie.title}"></span>
+            </h4>
+            <h5 class="card-subtitle"><span th:text="${movie.description}"></span></h5>
+            <p class="card-text">
+                <span th:text="${movie.category}"></span>
+                 |
+                <span th:text="${movie.production_year}"></span>
 
-    Title: <span th:text="${name.title}">Stranger</span><br>
-    Description: <span th:text="${name.description}"></span><br>
-    Prize: <span th:text="${name.prize}"></span> PLN <br>
-    Category: <span th:text="${name.category}"></span><br>
-    Year: <span th:text="${name.production_year}"></span><br>
-    <a class="btn btn-primary" href="/movies" role="button">Back</a>
-    <a class="btn btn-outline-success" href="#" role="button">Buy</a>
+            </p>
+
+        </div>
+        <div class="card-footer text-muted">
+            <a class="btn btn-secondary" href="/movies" role="button">Back</a>
+            <a class="btn btn-success" href="#" role="button">Buy</a>
+        </div>
+    </div>
 
 </div>
 
