@@ -20,7 +20,38 @@
 </nav>
 
 <div class="container-fluid">
-    Hello <span th:text="${name}">Stranger</span>!
+    <table border="2" class="table table-hover table-light table-striped table-sm border-info" >
+        <thead class="table-secondary">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Prize</th>
+        </tr>
+        </thead>
+        <tbody>
+<!--        <tr th:each="movi: ${cart.contents}" >-->
+<!--&lt;!&ndash;            <td class="text-wrap" th:text="${movi.id}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td class="text-wrap" th:text="${movi.title}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:text="${movi.prize}"></td>&ndash;&gt;-->
+<!--            <td>-->
+<!--                <form th:action="#" method="post">-->
+<!--                    <input type="hidden" name="id" th:value="#" />-->
+<!--                    <input type="submit" value="Remove" class="btn btn-danger btn-sm" />-->
+<!--                </form>-->
+<!--            </td>-->
+<!--            <td>-->
+<!--                <form th:action="#" method="post">-->
+<!--                    <input type="hidden" name="id" th:value="#" />-->
+<!--                    <input type="submit" value="Buy" class="btn btn-outline-success sm" />-->
+<!--                </form>-->
+<!--            </td>-->
+<!--        </tr>-->
+        <tr>
+            <td>Total:</td>
+            <td><span th:text="${cart.total}"></span></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 </body>
