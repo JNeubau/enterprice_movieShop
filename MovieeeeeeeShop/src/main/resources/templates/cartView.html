@@ -31,7 +31,7 @@
         </thead>
         <tbody>
         <tr th:each="movi: ${contents}" >
-            <td class="text-wrap" th:text="${movi.id}"></td>
+            <td class="text-wrap" th:text="${movi.id}" style="width: 8%"></td>
             <td class="text-wrap" th:text="${movi.title}"></td>
             <td th:text="${movi.prize}"></td>
             <td style="width: 20%;">
@@ -56,6 +56,10 @@
         </form>
     </div>
 </div>
+
+<footer style="position: fixed; bottom: 0; left: 3%">
+    <p>Author: Joanna Neubauer | <span><a href="https://github.com/JNeubau">GitHub</a></span> </p>
+</footer>
 
 </body>
 </html>

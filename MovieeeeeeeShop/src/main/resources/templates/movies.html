@@ -47,13 +47,13 @@
                 <td th:text="${movi.category}"></td>
                 <td th:text="${movi.prize}"></td>
                 <td th:text="${movi.production_year}"></td>
-                <td>
+                <td style="width: 5%">
                     <form th:action="@{/movies/details}" method="post">
                         <input type="hidden" name="id" th:value="${movi.id}" />
                         <input type="submit" value="Details" class="btn btn-secondary btn-sm" />
                     </form>
                 </td>
-                <td>
+                <td style="width: 5%">
                     <form th:action="@{/addToCart}" method="post">
                         <input type="hidden" name="movieId" th:value="${movi.id}" />
                         <input type="submit" value="Buy" class="btn btn-outline-success sm" />
@@ -63,6 +63,10 @@
             </tbody>
         </table>
     </div>
+
+    <footer style="position: fixed; bottom: 0; left: 3%">
+        <p>Author: Joanna Neubauer | <span><a href="https://github.com/JNeubau">GitHub</a></span> </p>
+    </footer>
 
 </body>
 </html>

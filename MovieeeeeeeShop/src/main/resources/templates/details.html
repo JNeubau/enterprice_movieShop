@@ -41,7 +41,7 @@
 
         </div>
         <div class="card-footer text-muted">
-            <a class="btn btn-secondary" href="/movies" role="button">Back</a>
+            <a class="btn btn-secondary" href="/movies" role="button" style="margin-bottom: 7px;">Back</a>
             <a>
                 <form th:action="@{/addToCart}" method="post">
                     <input type="hidden" name="movieId" th:value="${movie.id}" />
@@ -52,6 +52,10 @@
     </div>
 
 </div>
+
+<footer style="position: fixed; bottom: 0; left: 3%">
+    <p>Author: Joanna Neubauer | <span><a href="https://github.com/JNeubau">GitHub</a></span> </p>
+</footer>
 
 </body>
 </html>
