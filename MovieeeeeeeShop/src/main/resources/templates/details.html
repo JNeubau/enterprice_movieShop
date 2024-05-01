@@ -8,9 +8,10 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0d9984;">
-    <div class="container-fluid"><a class="navbar-brand" href="#">
+    <div class="container-fluid">
+        <a class="navbar-brand">
         <a class="navbar-brand text-white-50 " href="/movies">Movies Shop</a>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-brand text-white" id="navbarNav">
             <form th:action="@{/cart}" method="post">
                 <input type="hidden" name="id" th:value="${0}" />
                 <input type="submit" value="Cart" class="btn btn-link sm text-light" />
@@ -41,7 +42,12 @@
         </div>
         <div class="card-footer text-muted">
             <a class="btn btn-secondary" href="/movies" role="button">Back</a>
-            <a class="btn btn-success" href="#" role="button">Buy</a>
+            <a>
+                <form th:action="@{/addToCart}" method="post">
+                    <input type="hidden" name="movieId" th:value="${movie.id}" />
+                    <input type="submit" value="Buy" class="btn btn-success" />
+                </form>
+            </a>
         </div>
     </div>
 

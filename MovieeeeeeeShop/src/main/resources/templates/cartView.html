@@ -8,9 +8,10 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0d9984;">
-    <div class="container-fluid"><a class="navbar-brand" href="#">
+    <div class="container-fluid">
+        <a class="navbar-brand">
         <a class="navbar-brand text-white-50 " href="/movies">Movies Shop</a>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-brand text-white" id="navbarNav">
             <form th:action="@{/cart}" method="post">
                 <input type="hidden" name="id" th:value="${0}" />
                 <input type="submit" value="Cart" class="btn btn-link sm text-light" />
@@ -29,29 +30,31 @@
         </tr>
         </thead>
         <tbody>
-<!--        <tr th:each="movi: ${cart.contents}" >-->
-<!--&lt;!&ndash;            <td class="text-wrap" th:text="${movi.id}"></td>&ndash;&gt;-->
-<!--&lt;!&ndash;            <td class="text-wrap" th:text="${movi.title}"></td>&ndash;&gt;-->
-<!--&lt;!&ndash;            <td th:text="${movi.prize}"></td>&ndash;&gt;-->
-<!--            <td>-->
-<!--                <form th:action="#" method="post">-->
-<!--                    <input type="hidden" name="id" th:value="#" />-->
-<!--                    <input type="submit" value="Remove" class="btn btn-danger btn-sm" />-->
-<!--                </form>-->
-<!--            </td>-->
-<!--            <td>-->
-<!--                <form th:action="#" method="post">-->
-<!--                    <input type="hidden" name="id" th:value="#" />-->
-<!--                    <input type="submit" value="Buy" class="btn btn-outline-success sm" />-->
-<!--                </form>-->
-<!--            </td>-->
-<!--        </tr>-->
-        <tr>
+        <tr th:each="movi: ${contents}" >
+            <td class="text-wrap" th:text="${movi.id}"></td>
+            <td class="text-wrap" th:text="${movi.title}"></td>
+            <td th:text="${movi.prize}"></td>
+            <td style="width: 20%;">
+                <form th:action="@{/delete}" method="post">
+                    <input type="hidden" name="movieId" th:value="${movi.id}" />
+                    <input type="submit" value="Remove from cart" class="btn btn-danger btn-sm" />
+                </form>
+            </td>
+        </tr>
+        <tr style="font-weight: bold;">
             <td>Total:</td>
+            <td></td>
             <td><span th:text="${cart.total}"></span></td>
         </tr>
         </tbody>
     </table>
+
+    <div>
+        <form th:action="@{/finish}" method="post">
+            <input type="hidden" name="cartId" th:value="${cart.id}" />
+            <input type="submit" value="Finish Shoppng" class="btn btn-success" />
+        </form>
+    </div>
 </div>
 
 </body>
